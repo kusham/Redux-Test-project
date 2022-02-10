@@ -1,20 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import { fetchEmployees } from "../actions/EmployeeAction";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import {  useDispatch } from "react-redux";
 
-class ButtonComponent extends Component {
-  render() {
-    return (
-      <div>
-        <button onClick={() => this.props.fetchEmployees()}>Click Me</button>
-      </div>
-    );
-  }
-}
+const ButtonComponents = () => {
+  const dispatch = useDispatch();
+  return (
+    <div>
+      <button onClick={() => dispatch(fetchEmployees())}>Click Me</button>
+    </div>
+  );
+};
 
-function matchDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchEmployees: fetchEmployees }, dispatch);
-}
+export default ButtonComponents
 
-export default connect(null, matchDispatchToProps)(ButtonComponent);
+// function matchDispatchToProps(dispatch) {
+//   return bindActionCreators({ fetchEmployees: fetchEmployees }, dispatch);
+// }
+
+// export default connect(null, matchDispatchToProps)(ButtonComponents);
