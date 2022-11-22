@@ -3,7 +3,7 @@ import { BUTTON_CLICKED, SELECT_EMPLOYEE } from "./ActionTypes";
 
 export const fetchEmployees = () => (dispatch) => {
   axios
-    .get("http://localhost:8070/employee/")
+    .get("http://localhost:8080/employee/")
     .then((res) => {
       dispatch({
         type: BUTTON_CLICKED,
